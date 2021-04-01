@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PlayapiApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(PlayapiApplication.class, args);
+        System.out.println("hello!");
     }
 
 }
