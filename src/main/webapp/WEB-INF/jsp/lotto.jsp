@@ -240,6 +240,10 @@
         .col9 {
             width: 17%;
         }
+
+        .p_r{
+            padding-right: 15px;
+        }
     </style>
 </head>
 
@@ -509,11 +513,16 @@
     }
 
     function lottoRandomNumber() {
-        const temp = document.getElementById("gameCount").value;
+        const gameCount = document.getElementById("gameCount").value;
         const innerText = document.getElementById("lottoNumber");
 
-        if (temp === null || temp === "") {
+        if (gameCount === null || gameCount === "") {
             alert("게임 구매 갯수 입력 하자");
+            return false;
+        }
+        if(gameCount > 100){
+            alert("100게임 초과는 안된다!");
+            document.getElementById("gameCount").value = null;
             return false;
         }
 
@@ -523,7 +532,7 @@
 
         $.ajax({
             type: "POST",
-            url: "/lotto/randomNumber",
+            url: "/lotto/randomNumbers",
             data: params,
             error: function (error) {
                 console.log(error.toString());
@@ -533,13 +542,18 @@
 
                 console.log(data);
                 innerText.innerHTML = "";
-                let dataArr = data;
-                for (let i = 0; i < dataArr.length; i++) {
-                    innerText.innerHTML += dataArr[i] + "<br>";
+                let dataArr = [];
+                dataArr = data;
 
+                for(let i=0; i<dataArr.length; i++){
+                    for(let j=0; j<dataArr[i].length; j++){
+                        console.log("length", dataArr[i][j].length);
+                        innerText.innerHTML += "<span class='f"+i+"s"+j+" p_r'>" + dataArr[i][j] + "</span>";
+                    }
+                    innerText.innerHTML += "<br>";
                 }
+
                 document.getElementById("gameCount").value = null;
-                // innerText.innerHTML = data;
             }
         });
 
@@ -557,15 +571,15 @@
     }
 
     function getLottoNumResult() {
-        const temp = document.getElementById("drwNo").value;
+        const drwNo = document.getElementById("drwNo").value;
         const innerText = document.getElementById("lottoNumResult");
 
-        if (temp === null || temp === "") {
+        if (drwNo === null || drwNo === "") {
             alert("조회할 회차 입력!!");
             return false;
         }
         const params = {
-            drwNo: temp
+            drwNo: drwNo
         }
 
         $.ajax({

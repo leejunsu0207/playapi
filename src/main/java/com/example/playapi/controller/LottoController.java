@@ -29,9 +29,16 @@ public class LottoController {
     @RequestMapping("/randomNumber")
     public List<String> lottoRandomNumber(@RequestParam Map<String, Object> pMap) throws Exception {
         System.out.println("lottoRandomNumber:::::::");
-
         List<String> temp = lottoService.getLottoRandomNumber((String)pMap.get("gameCount"));
-        System.out.println(temp);
+
+        return temp;
+    }
+
+    @ResponseBody
+    @RequestMapping("/randomNumbers")
+    public int[][] lottoRandomNumbers(@RequestParam Map<String, Object> pMap) throws Exception {
+        System.out.println("lottoRandomNumber:::::::");
+        int[][] temp = lottoService.getLottoRandomNumbers((String)pMap.get("gameCount"));
 
         return temp;
     }
