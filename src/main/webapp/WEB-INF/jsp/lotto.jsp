@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로또구매점 검색 및 추천번호 생성!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
@@ -241,9 +242,139 @@
             width: 17%;
         }
 
-        .p_r{
-            padding-right: 15px;
+        .box {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #fbc400;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
         }
+        .box2 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #69c8f2;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+        .box3 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #ff7272;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+        .box4 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #aaa;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+        .box5 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #b0d840;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+        .box6 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #898989;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+        h3 {
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.2rem;
+
+        }
+
+        @keyframes moving {
+            from {
+                width: 0;
+                height: 0;
+                opacity: 0.5;
+                transform: scale(0.5) rotate(15deg);
+            }
+
+            to {
+                width: 3.8rem;
+                height: 3.8rem;
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
     </style>
 </head>
 
@@ -542,13 +673,23 @@
 
                 console.log(data);
                 innerText.innerHTML = "";
-                let dataArr = [];
-                dataArr = data;
+                let dataArr = data;
+                let cName = "";
 
                 for(let i=0; i<dataArr.length; i++){
                     for(let j=0; j<dataArr[i].length; j++){
-                        console.log("length", dataArr[i][j].length);
-                        innerText.innerHTML += "<span class='f"+i+"s"+j+" p_r'>" + dataArr[i][j] + "</span>";
+                        if(dataArr[i][j] <= 10){
+                            cName = "box";
+                        }else if(dataArr[i][j] <= 20){
+                            cName = "box2";
+                        }else if(dataArr[i][j] <= 30){
+                            cName = "box3";
+                        }else if(dataArr[i][j] <= 40){
+                            cName = "box4";
+                        }else {
+                            cName = "box5";
+                        }
+                        innerText.innerHTML += "<div class='"+cName+"'>" + "<h3>" + dataArr[i][j] + "</h3>" + "</div>";
                     }
                     innerText.innerHTML += "<br>";
                 }

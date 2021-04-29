@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-interation-count</title>
+    <style>
+        div.box {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #208acc;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+          div.box2 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #ffa617;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+          div.box3 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #ff4108;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+              div.box4 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #f22ddb;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+              div.box5 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #683df7;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+              div.box6 {
+            width: 3.8rem;
+            height: 3.8rem;
+            margin: 20px 10px 0 20px;
+            display: inline-block;
+            border-radius: 50%;
+            animation-name: moving;
+            animation-duration: 3s;
+            /* 애니메이션이 끝난 후 반대 방향으로 실행하지 않음 */
+            animation-direction: normal;
+            /* 애니메이션이 끝난 후 무한반복 */
+            animation-iteration-count: 1;
+            background: #898989;
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+            position: relative
+        }
+
+
+
+        h3 {
+            position: absolute;
+            margin: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.2rem;
+        
+        }
+
+        @keyframes moving {
+            from {
+                width: 0;
+                height: 0;
+                opacity: 0.5;
+                transform: scale(0.5) rotate(15deg);
+            }
+           
+            to {
+                width: 3.8rem;
+                height: 3.8rem;
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>21</h3>
+    </div>
+    <div class="box2">
+        <h3>42</h3>
+    </div>
+    <div class="box3">
+        <h3>6</h3>
+    </div>
+    <div class="box4">
+        <h3>1</h3>
+    </div>
+    <div class="box5">
+        <h3>35</h3>
+    </div>
+    
+    <div class="box6">
+        <h3> 9</h3>
+    </div>
+</body></html>
+
+

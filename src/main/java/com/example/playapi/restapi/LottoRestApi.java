@@ -37,13 +37,6 @@ public class LottoRestApi {
         ObjectMapper mapper = new ObjectMapper();
         save = mapper.readValue(exchange.getBody(), new TypeReference<Map<String, Object>>() {
         });
-//        System.out.println(result);
-//        String body = exchange.getBody();
-//        com.google.gson.JsonParser jp = new com.google.gson.JsonParser();
-//        JsonObject obj = jp.parseString(body).getAsJsonObject();
-//        save = lottoCrawlService.save(LottoRound.createLotto(obj));
-//        save = obj;
-//        System.out.println(obj);
 
         return ResponseEntity.ok(save);
 
