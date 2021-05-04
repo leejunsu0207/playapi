@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URLEncoder;
 import java.util.Map;
 
 @RestController
@@ -19,10 +20,12 @@ public class LottoRestApi {
     @GetMapping("/lottoNumber")
     public ResponseEntity<Map> getLottoNum(String drwNo) throws Exception {
         Map<String, Object> save;
-        String url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="+drwNo;
+        StringBuilder urlBuilder = new StringBuilder("https://www.dhlottery.co.kr/common.do");
+        urlBuilder.append("?" + URLEncoder.encode("mehtod", "UTF-8") + "=" + URLEncoder.encode("getLottoNumber", "UTF-8"));
+        urlBuilder.append("&" + URLEncoder.encode("drwNo", "UTF-8") + "=" + URLEncoder.encode(drwNo, "UTF-8"));
 
         UriComponents uriComponents = UriComponentsBuilder
-                .fromHttpUrl(url)
+                .fromHttpUrl(String.valueOf(urlBuilder))
                 .build();
         RestTemplate restTemplate = new RestTemplate();
 

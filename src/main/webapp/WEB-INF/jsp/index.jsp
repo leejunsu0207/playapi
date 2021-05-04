@@ -10,6 +10,7 @@
 <body>
     <h1>hi index</h1>
     <button type="button" id="lotto" onclick="location.href='/lotto'">lotto</button>
+    <button type="button" id="covid" onclick="location.href='/covid'">covid</button>
 
 </body>
 </html>
