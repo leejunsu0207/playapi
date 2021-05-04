@@ -21,8 +21,10 @@ public class LottoRestApi {
     public ResponseEntity<Map> getLottoNum(String drwNo) throws Exception {
         Map<String, Object> save;
         StringBuilder urlBuilder = new StringBuilder("https://www.dhlottery.co.kr/common.do");
-        urlBuilder.append("?" + URLEncoder.encode("mehtod", "UTF-8") + "=" + URLEncoder.encode("getLottoNumber", "UTF-8"));
+        urlBuilder.append("?" + URLEncoder.encode("method", "UTF-8") + "=" + URLEncoder.encode("getLottoNumber", "UTF-8"));
         urlBuilder.append("&" + URLEncoder.encode("drwNo", "UTF-8") + "=" + URLEncoder.encode(drwNo, "UTF-8"));
+
+//        String url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="+drwNo;
 
         UriComponents uriComponents = UriComponentsBuilder
                 .fromHttpUrl(String.valueOf(urlBuilder))
