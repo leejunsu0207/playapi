@@ -24,6 +24,7 @@ public class LottoController {
         return "lotto";
     }
 
+    // 1.0
     @ResponseBody
     @RequestMapping("/randomNumber")
     public List<String> lottoRandomNumber(@RequestParam Map<String, Object> pMap) throws Exception {
@@ -31,6 +32,7 @@ public class LottoController {
         return temp;
     }
 
+    // 1.1
     @ResponseBody
     @RequestMapping("/randomNumbers")
     public int[][] lottoRandomNumbers(@RequestParam Map<String, Object> pMap) throws Exception {
